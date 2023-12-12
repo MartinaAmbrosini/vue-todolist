@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Todo List</title>
 </head>
 <body>
+<div id="app">
+    <div class="container">
+        <div class="text-center mt-5 border">
+            <h2>TO DO LIST</h2>
+        </div>
+        <div class="card mt-4" style="width: 81rem;">
+            <div class="card-header text-center">
+                <div class="new-task">
+                    <input class="mx-2" type="text" placeholder="New Task" v-model="taskMessage.text">
+                    <button @click="addTask">Aggiungi</button>
+                    <div class="errors text-center mt-2" v-if="error">Devi inserire almeno 5 caratteri</div>
+                </div> 
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="tasks-container">
+                    <ul>
+                        <li class="task" v-for="(task, i) in todos" :class="task.done === true ? 'done': ''">{{task.text}}
+                            <div class="del d-flex justify-content-end text-center mb-1">
+                                <i class="fa-solid fa-xmark fa-xl" @click="remTask(i)" style="color: #050505;"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+              </li>  
+            </ul>
+          </div>
+    </div>
+</div>
 
+<script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
 <script src="js/script.js"></script>
 </body>
 </html>

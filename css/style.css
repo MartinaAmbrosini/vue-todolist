@@ -3,3 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+li{
+    list-style-type: none;
+    border-bottom: 1px solid rgb(14, 192, 177);
+    position: relative;
+    padding: 8px 0;
+}
+
+.fa-xmark{
+    cursor: pointer;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.errors{
+    color: rgb(190, 26, 26);
+    text-align: right;
+    padding: 10px 20px;
+}
