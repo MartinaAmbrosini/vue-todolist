@@ -52,7 +52,7 @@ createApp({
                 this.todos.unshift(this.taskMessage);
                 this.taskMessage = {
                     text: "",
-                    done: "false"
+                    done: false
                 };
                 this.error = false;
             }
